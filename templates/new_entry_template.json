@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "mir:XXXX",
+  "doi": null,
+  "title": "",
+  "alternateTitle": null,
+  "description": "",
+  "creator": {
+    "name": "",
+    "url": null,
+    "orcid": null,
+    "role": null
+  },
+  "datePublished": "YYYY-MM-DD",
+  "dateAccessed": "YYYY-MM-DD",
+  "language": "en",
+  "platform": {
+    "name": "",
+    "url": "",
+    "channelName": null,
+    "channelUrl": null
+  },
+  "mediaType": "video",
+  "duration": null,
+  "resolution": null,
+  "encodingFormat": null,
+  "aiGenerated": "none",
+  "aiDisclosure": {
+    "tools": [],
+    "methodology": null,
+    "notes": null
+  },
+  "license": null,
+  "archival": {
+    "localCopy": false,
+    "localPath": null,
+    "checksum": null,
+    "archiveDate": null,
+    "doiStatus": "pending",
+    "zenodoRecord": null
+  },
+  "citation": {
+    "apa": null,
+    "mla": null,
+    "chicago": null,
+    "bibtex": null
+  },
+  "tags": [],
+  "genre": null
+}

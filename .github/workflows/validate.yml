@@ -1,0 +1,34 @@
+name: Validate Registry Entries
+
+on:
+  push:
+    paths:
+      - 'data/**'
+  pull_request:
+    paths:
+      - 'data/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate all entries
+        run: python scripts/validate_registry.py data/entries/
+
+      - name: Validate JSON syntax
+        run: |
+          for f in data/entries/*.json; do
+            python -m json.tool "$f" > /dev/null || { echo "Invalid JSON: $f"; exit 1; }
+          done
+          echo "All JSON files are syntactically valid."

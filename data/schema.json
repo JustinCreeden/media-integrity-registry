@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/JustinCreeden/media-integrity-registry/blob/main/data/schema.json",
+  "title": "Media Integrity Registry Entry",
+  "description": "Schema for a single entry in the Media Integrity Registry (MIR).",
+  "type": "object",
+  "required": [
+    "@context",
+    "@type",
+    "@id",
+    "title",
+    "creator",
+    "datePublished",
+    "platform",
+    "mediaType",
+    "aiGenerated"
+  ],
+  "properties": {
+    "@context": {
+      "type": "string",
+      "const": "https://schema.org"
+    },
+    "@type": {
+      "type": "string",
+      "enum": ["VideoObject", "AudioObject", "ImageObject", "CreativeWork"]
+    },
+    "@id": {
+      "type": "string",
+      "pattern": "^mir:\\d{4}$",
+      "description": "Unique MIR identifier (e.g., mir:0013)"
+    },
+    "doi": {
+      "type": ["string", "null"],
+      "pattern": "^10\\..+/.+$",
+      "description": "Digital Object Identifier"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "alternateTitle": {
+      "type": ["string", "null"]
+    },
+    "description": {
+      "type": ["string", "null"],
+      "maxLength": 2000
+    },
+    "creator": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "orcid": {
+          "type": ["string", "null"],
+          "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+        },
+        "role": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "datePublished": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date"
+    },
+    "dateAccessed": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "language": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+      "description": "BCP 47 language tag"
+    },
+    "platform": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "channelName": {
+          "type": ["string", "null"]
+        },
+        "channelUrl": {
+          "type": ["string", "null"],
+          "format": "uri"
+        }
+      }
+    },
+    "mediaType": {
+      "type": "string",
+      "enum": ["video", "audio", "image", "interactive"]
+    },
+    "duration": {
+      "type": ["string", "null"],
+      "pattern": "^PT(\\d+H)?(\\d+M)?(\\d+S)?$",
+      "description": "ISO 8601 duration"
+    },
+    "resolution": {
+      "type": ["string", "null"]
+    },
+    "encodingFormat": {
+      "type": ["string", "null"]
+    },
+    "aiGenerated": {
+      "type": "string",
+      "enum": ["none", "partial", "full"]
+    },
+    "aiDisclosure": {
+      "type": ["object", "null"],
+      "properties": {
+        "tools": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "methodology": {
+          "type": ["string", "null"]
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "license": {
+      "type": ["string", "null"],
+      "description": "SPDX identifier or URL to license"
+    },
+    "archival": {
+      "type": "object",
+      "required": ["localCopy"],
+      "properties": {
+        "localCopy": {
+          "type": "boolean"
+        },
+        "localPath": {
+          "type": ["string", "null"]
+        },
+        "checksum": {
+          "type": ["object", "null"],
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "enum": ["SHA-256", "SHA-512", "MD5"]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": ["algorithm", "value"]
+        },
+        "archiveDate": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "doiStatus": {
+          "type": ["string", "null"],
+          "enum": ["registered", "pending", "not_applicable", null]
+        },
+        "zenodoRecord": {
+          "type": ["string", "null"],
+          "format": "uri"
+        }
+      }
+    },
+    "citation": {
+      "type": ["object", "null"],
+      "properties": {
+        "apa": { "type": ["string", "null"] },
+        "mla": { "type": ["string", "null"] },
+        "chicago": { "type": ["string", "null"] },
+        "bibtex": { "type": ["string", "null"] }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 0
+    },
+    "genre": {
+      "type": ["string", "array", "null"],
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

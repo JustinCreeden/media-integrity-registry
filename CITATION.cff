@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Media Integrity Registry: A Citable Database of Audiovisual Media with Provenance Tracking"
+version: 0.1.0
+date-released: "2026-03-22"
+doi: "10.5281/zenodo.XXXXXXX"
+url: "https://github.com/JustinCreeden/media-integrity-registry"
+repository-code: "https://github.com/JustinCreeden/media-integrity-registry"
+license: CC-BY-4.0
+keywords:
+  - media database
+  - digital object identifier
+  - DOI
+  - AI-generated media
+  - provenance
+  - digital preservation
+  - video essay
+  - metadata
+  - FAIR data
+  - archival
+authors:
+  - family-names: Creeden
+    given-names: Justin
+    suffix: "MD-PhD"
+abstract: >-
+  A curated, standards-compliant database of audiovisual media
+  with provenance tracking, AI-generation transparency metadata,
+  and Digital Object Identifiers (DOIs). Follows FAIR Data Principles
+  and uses vocabulary from Schema.org, Dublin Core, and DataCite.
+references:
+  - type: standard
+    title: "FAIR Guiding Principles for scientific data management and stewardship"
+    authors:
+      - family-names: Wilkinson
+        given-names: Mark D.
+    doi: "10.1038/sdata.2016.18"
+    year: 2016
+  - type: standard
+    title: "DataCite Metadata Schema v4.5"
+    url: "https://schema.datacite.org/meta/kernel-4.5/"

@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Media Integrity Registry",
+  "description": "A curated, citable database of audiovisual media with provenance tracking, AI-generation detection metadata, and Digital Object Identifiers.",
+  "url": "https://github.com/JustinCreeden/media-integrity-registry",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "0.1.0",
+  "dateModified": "2026-03-22",
+  "entries": [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "mir:0013",
+      "doi": null,
+      "title": "My Favorite Twilight Knockoff",
+      "description": "A longform video essay by Jenny Nicholson examining a notable work of fiction that closely mirrors the plot, structure, and themes of Stephenie Meyer's Twilight saga.",
+      "creator": {
+        "name": "Jenny Nicholson",
+        "url": "https://www.youtube.com/@JennyNicholson",
+        "orcid": null,
+        "role": "video essayist"
+      },
+      "datePublished": "2026-03-21",
+      "dateAccessed": "2026-03-22",
+      "language": "en",
+      "platform": {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=PENDING_VIDEO_ID",
+        "channelName": "Jenny Nicholson",
+        "channelUrl": "https://www.youtube.com/@JennyNicholson"
+      },
+      "mediaType": "video",
+      "duration": null,
+      "resolution": null,
+      "encodingFormat": "video/mp4",
+      "aiGenerated": "none",
+      "aiDisclosure": {
+        "tools": [],
+        "methodology": null,
+        "notes": "Traditionally produced longform video essay. No evidence of AI-generated content."
+      },
+      "license": "Standard YouTube License",
+      "archival": {
+        "localCopy": false,
+        "localPath": null,
+        "checksum": null,
+        "archiveDate": null,
+        "doiStatus": "pending",
+        "zenodoRecord": null
+      },
+      "citation": {
+        "apa": "Nicholson, J. [Jenny Nicholson]. (2026, March 21). My favorite Twilight knockoff [Video]. YouTube. https://www.youtube.com/watch?v=PENDING_VIDEO_ID",
+        "mla": "Nicholson, Jenny. \"My Favorite Twilight Knockoff.\" YouTube, uploaded by Jenny Nicholson, 21 Mar. 2026, www.youtube.com/watch?v=PENDING_VIDEO_ID.",
+        "chicago": "Jenny Nicholson, \"My Favorite Twilight Knockoff,\" YouTube, March 21, 2026, video, https://www.youtube.com/watch?v=PENDING_VIDEO_ID.",
+        "bibtex": "@misc{nicholson2026twilightknockoff,\n  author       = {Nicholson, Jenny},\n  title        = {My Favorite Twilight Knockoff},\n  year         = {2026},\n  month        = mar,\n  day          = {21},\n  howpublished = {YouTube},\n  url          = {https://www.youtube.com/watch?v=PENDING_VIDEO_ID},\n  note         = {Video essay. Accessed 2026-03-22.}\n}"
+      },
+      "tags": [
+        "video essay",
+        "twilight",
+        "young adult fiction",
+        "literary analysis",
+        "media criticism",
+        "pop culture",
+        "book review",
+        "jenny nicholson",
+        "longform"
+      ],
+      "genre": ["video essay", "media criticism"]
+    }
+  ]
+}
