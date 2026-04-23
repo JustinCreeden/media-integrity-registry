@@ -8,7 +8,7 @@ active
 
 ## Last updated
 
-2026-04-19
+2026-04-23
 
 ## Current version
 
@@ -16,7 +16,8 @@ See `CHANGELOG.md` for the latest tagged release.
 
 ## Open issues
 
-_None recorded. List open tickets, PRs, or known bugs here — prefer linking the upstream tracker over duplicating state._
+- **PRs:** 0 open (see `gh pr list -R JustinCreeden/media-integrity-registry --state open`)
+- **Issues:** 0 open (see `gh issue list -R JustinCreeden/media-integrity-registry --state open`)
 
 ## Blocked on
 
