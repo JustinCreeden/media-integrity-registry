@@ -14,7 +14,7 @@ See the full project page at [docs/projects/media-integrity-registry.md](https:/
 
 ## Current state
 
-_Last refreshed: 2026-04-19 — run `jcpd scaffold media-integrity-registry --refresh` to update._
+_Last refreshed: 2026-04-23 — run `jcpd scaffold media-integrity-registry --refresh` to update._
 
 Active **public** repository. The registry is the only ecosystem daughter with `visibility: public` and a Creative Commons license.
 
@@ -39,12 +39,12 @@ No active work recorded. See [jcpd TODO.md](https://github.com/JustinCreeden/jcp
 
 ## Sync contract
 
-None — this repo has no sync contract with `jcpd-emr` in `meta/ecosystem.yaml`.
+None — this repo has no sync contract in `meta/ecosystem.yaml`.
 
 ## How to start a session
 
 ```bash
-cd C:/Git/media-integrity-registry
+cd C:/Users/justi/code/active/media-integrity-registry
 git pull --rebase origin main
 jcpd doctor media-integrity-registry
 ```
