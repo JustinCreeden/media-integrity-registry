@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-validate_registry.py — Validate MIR entries against the JSON Schema.
+validate_registry.py - Validate MIR entries against the JSON Schema.
 
 Usage:
     python validate_registry.py <entry.json>
@@ -38,22 +38,29 @@ def load_schema():
         return json.load(f)
 
 
-def validate_entry(filepath: Path, schema: dict) -> list[str]:
-    """Validate a single entry file. Returns list of error messages."""
-    errors = []
+def validate_entry(filepath: Path, schema: dict) -> tuple[list[str], list[str]]:
+    """Validate a single entry file.
+
+    Returns (errors, warnings). Errors fail CI (exit non-zero); warnings are
+    informational and do not fail CI. The split lets us flag "Recommended"
+    fields without blocking placeholder entries (e.g. records awaiting a
+    publication-time field like duration).
+    """
+    errors: list[str] = []
+    warnings: list[str] = []
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             entry = json.load(f)
     except json.JSONDecodeError as e:
-        return [f"Invalid JSON: {e}"]
+        return [f"Invalid JSON: {e}"], []
 
-    # Schema validation
+    # Schema validation - hard errors
     validator = Draft202012Validator(schema)
     for error in sorted(validator.iter_errors(entry), key=lambda e: list(e.path)):
-        path = " → ".join(str(p) for p in error.absolute_path) or "(root)"
+        path = " -> ".join(str(p) for p in error.absolute_path) or "(root)"
         errors.append(f"  [{path}] {error.message}")
 
-    # Additional semantic checks beyond JSON Schema
+    # Semantic errors - hard fails (Required / Must)
     if entry.get("aiGenerated") != "none" and not entry.get("aiDisclosure", {}).get("tools"):
         errors.append("  [aiDisclosure.tools] Must list AI tools when aiGenerated is not 'none'")
 
@@ -63,10 +70,11 @@ def validate_entry(filepath: Path, schema: dict) -> list[str]:
     if entry.get("archival", {}).get("localCopy") and not entry.get("archival", {}).get("archiveDate"):
         errors.append("  [archival.archiveDate] Required when localCopy is true")
 
+    # Semantic warnings - do not fail CI (Recommended)
     if entry.get("mediaType") in ("video", "audio") and not entry.get("duration"):
-        errors.append("  [duration] Recommended for video/audio entries (ISO 8601 duration)")
+        warnings.append("  [duration] Recommended for video/audio entries (ISO 8601 duration)")
 
-    return errors
+    return errors, warnings
 
 
 def main():
@@ -92,19 +100,26 @@ def main():
     print(f"Validating {len(targets)} entries against {SCHEMA_PATH.name}...\n")
 
     total_errors = 0
+    total_warnings = 0
     for filepath in targets:
-        errors = validate_entry(filepath, schema)
+        errors, warnings = validate_entry(filepath, schema)
         if errors:
-            print(f"✗ {filepath.name}")
+            print(f"FAIL {filepath.name}")
             for err in errors:
                 print(f"  {err}")
-            total_errors += len(errors)
+        elif warnings:
+            print(f"WARN {filepath.name}")
         else:
-            print(f"✓ {filepath.name}")
+            print(f"OK   {filepath.name}")
+        for w in warnings:
+            print(f"  [warn] {w}")
+        total_errors += len(errors)
+        total_warnings += len(warnings)
 
     print(f"\n{'='*50}")
-    print(f"Files checked: {len(targets)}")
-    print(f"Errors found:  {total_errors}")
+    print(f"Files checked:  {len(targets)}")
+    print(f"Errors found:   {total_errors}")
+    print(f"Warnings found: {total_warnings}")
     print(f"{'='*50}")
 
     sys.exit(1 if total_errors > 0 else 0)
