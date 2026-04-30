@@ -3,7 +3,7 @@
   "@type": "Dataset",
   "name": "Media Integrity Registry",
   "description": "A curated, citable database of audiovisual media with provenance tracking, AI-generation detection metadata, and Digital Object Identifiers.",
-  "url": "https://github.com/JustinCreeden/media-integrity-registry",
+  "url": "https://github.com/Creeden-Enterprise/media-integrity-registry",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "version": "0.1.0",
   "dateModified": "2026-03-22",

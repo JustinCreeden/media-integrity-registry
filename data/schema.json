@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/JustinCreeden/media-integrity-registry/blob/main/data/schema.json",
+  "$id": "https://github.com/Creeden-Enterprise/media-integrity-registry/blob/main/data/schema.json",
   "title": "Media Integrity Registry Entry",
   "description": "Schema for a single entry in the Media Integrity Registry (MIR).",
   "type": "object",

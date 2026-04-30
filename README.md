@@ -66,7 +66,7 @@ media-integrity-registry/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/JustinCreeden/media-integrity-registry.git
+git clone https://github.com/Creeden-Enterprise/media-integrity-registry.git
 cd media-integrity-registry
 ```
 
@@ -135,7 +135,7 @@ See [docs/DATA_DICTIONARY.md](docs/DATA_DICTIONARY.md) for the complete field re
   year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://github.com/JustinCreeden/media-integrity-registry}
+  url          = {https://github.com/Creeden-Enterprise/media-integrity-registry}
 }
 ```
 
