@@ -2,7 +2,7 @@
 
 > **Category:** database · **License:** CC BY 4.0 · **HIPAA:** none
 >
-> **Registry entry:** [meta/ecosystem.yaml#media-integrity-registry](https://github.com/JustinCreeden/jcpd/blob/main/meta/ecosystem.yaml)
+> **Registry entry:** [meta/ecosystem.yaml#media-integrity-registry](https://github.com/Creeden-Enterprise/jcpd/blob/main/meta/ecosystem.yaml)
 
 ---
 
@@ -10,7 +10,7 @@
 
 Media provenance registry — tracks AI-generation metadata for curated clinical media assets.
 
-See the full project page at [docs/projects/media-integrity-registry.md](https://github.com/JustinCreeden/jcpd/blob/main/docs/projects/media-integrity-registry.md).
+See the full project page at [docs/projects/media-integrity-registry.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/docs/projects/media-integrity-registry.md).
 
 ## Current state
 
@@ -35,7 +35,7 @@ Active **public** repository. The registry is the only ecosystem daughter with `
 
 ## Active work
 
-No active work recorded. See [jcpd TODO.md](https://github.com/JustinCreeden/jcpd/blob/main/TODO.md) for queued ecosystem items, or this repo's own `STATUS.md` for its current version and blockers.
+No active work recorded. See [jcpd TODO.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/TODO.md) for queued ecosystem items, or this repo's own `STATUS.md` for its current version and blockers.
 
 ## Sync contract
 
@@ -58,7 +58,7 @@ jcpd doctor media-integrity-registry
 
 ## Links
 
-- Master repo: https://github.com/JustinCreeden/jcpd
-- This repo in registry: [meta/ecosystem.yaml#media-integrity-registry](https://github.com/JustinCreeden/jcpd/blob/main/meta/ecosystem.yaml)
-- Handoff protocol: [docs/ecosystem/handoff-protocol.md](https://github.com/JustinCreeden/jcpd/blob/main/docs/ecosystem/handoff-protocol.md)
-- Session-start protocol: [docs/operations/session-protocol.md](https://github.com/JustinCreeden/jcpd/blob/main/docs/operations/session-protocol.md)
+- Master repo: https://github.com/Creeden-Enterprise/jcpd
+- This repo in registry: [meta/ecosystem.yaml#media-integrity-registry](https://github.com/Creeden-Enterprise/jcpd/blob/main/meta/ecosystem.yaml)
+- Handoff protocol: [docs/ecosystem/handoff-protocol.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/docs/ecosystem/handoff-protocol.md)
+- Session-start protocol: [docs/operations/session-protocol.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/docs/operations/session-protocol.md)
