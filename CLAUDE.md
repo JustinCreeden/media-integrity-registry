@@ -14,8 +14,9 @@ See the full project page at [docs/projects/media-integrity-registry.md](https:/
 
 ## Current state
 
-_Last refreshed: 2026-04-23 — run `jcpd scaffold media-integrity-registry --refresh` to update._
+_Last refreshed: 2026-05-04 — run `jcpd scaffold media-integrity-registry --refresh` to update._
 
+<!-- preserve:start current_state -->
 Active **public** repository. The registry is the only ecosystem daughter with `visibility: public` and a Creative Commons license.
 
 **Layout:**
@@ -32,10 +33,13 @@ Active **public** repository. The registry is the only ecosystem daughter with `
 **Relationship to jcpd:** functionally independent — media entries may be referenced by `jcpd-emr`'s Media mode for therapeutic-content provenance, but the registry is consumable by any FAIR-aware tool.
 
 **Constraints:** public visibility; no PHI; archived media files respect their original creator's license.
+<!-- preserve:end current_state -->
 
 ## Active work
 
+<!-- preserve:start active_work -->
 No active work recorded. See [jcpd TODO.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/TODO.md) for queued ecosystem items, or this repo's own `STATUS.md` for its current version and blockers.
+<!-- preserve:end active_work -->
 
 ## Sync contract
 
@@ -56,9 +60,14 @@ jcpd doctor media-integrity-registry
 3. `jcpd drift` — reconcile if this session touched a plugin file (see **Sync contract** above).
 4. Update this repo's `STATUS.md` — flip **Status**, bump **Last updated**, record the new **Current version**, triage **Open issues**.
 
+## Skills and rules
+
+If this repo defines `.claude/skills/<name>/SKILL.md` files, the `name:` frontmatter values must not collide with any other active daughter's skills — the launcher's `--add-dir` set means peer-project skills load alongside this repo's, and `Skill()` resolves by first match in load order. See the canonical [skill-resolution rule](https://github.com/Creeden-Enterprise/jcpd/blob/main/.claude/rules/skill-resolution.md) at the hub. `jcpd doctor` enforces uniqueness across the ecosystem.
+
 ## Links
 
 - Master repo: https://github.com/Creeden-Enterprise/jcpd
 - This repo in registry: [meta/ecosystem.yaml#media-integrity-registry](https://github.com/Creeden-Enterprise/jcpd/blob/main/meta/ecosystem.yaml)
 - Handoff protocol: [docs/ecosystem/handoff-protocol.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/docs/ecosystem/handoff-protocol.md)
 - Session-start protocol: [docs/operations/session-protocol.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/docs/operations/session-protocol.md)
+- Skill resolution rule: [.claude/rules/skill-resolution.md](https://github.com/Creeden-Enterprise/jcpd/blob/main/.claude/rules/skill-resolution.md)
